@@ -6,6 +6,7 @@ import Home from "./page/Home";
 import Navigation from "./components/Navigation";
 import Characters from "./page/Characters";
 import Character from "./page/Character";
+import Raid from "./page/Raid";
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 					<Route exact path="/login" component={Login} />
 					<Route exact path="/characters" component={Characters} />
 					<Route exact path="/characters/:name" component={Character} />
+					<Route exact path="/raid" component={Raid} />
 				</Switch>
 			</Router>
 		</div>

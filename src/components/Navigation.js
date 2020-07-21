@@ -18,6 +18,11 @@ export default function Navigation() {
 							</Link>
 						</div>
 						<div className="home-section">
+							<Link to="/raid" className="no-underscore">
+								<span className="fancy-text">Raid</span>
+							</Link>
+						</div>
+						<div className="home-section">
 							<Link to="/tools" className="no-underscore">
 								<span className="fancy-text">Tools</span>
 							</Link>

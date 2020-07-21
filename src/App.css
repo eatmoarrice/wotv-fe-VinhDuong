@@ -493,6 +493,27 @@ a {
 	animation-fill-mode: forwards;
 }
 
+.icy-name {
+	/* text-shadow: 1px 1px rgba(51, 51, 51, 0.193); */
+	font-family: "Frijole", cursive;
+	background: -webkit-linear-gradient(rgb(213, 235, 255), rgb(146, 177, 245));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	padding: 5px;
+	color: #ffffff;
+	letter-spacing: 0px;
+	font-size: 26 px;
+	filter: drop-shadow(1px 1px 1px #050505d3);
+}
+
+.resistance-board {
+	background-color: #4d443b;
+	border-radius: 20px;
+	padding: 15px;
+	margin: 5px;
+	max-width: 700px;
+}
+
 .fade-in-1 {
 	opacity: 0;
 	animation: fade-in 1s ease-in 2.5s;
@@ -521,4 +542,137 @@ a {
 
 .divider2 {
 	max-width: 500px !important;
+}
+.square {
+	overflow: visible;
+	width: 48px;
+	padding-bottom: 5px;
+	margin: 5px;
+	border-radius: 8px;
+	background-color: rgb(49, 35, 35);
+	box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.5);
+}
+.square > div > img:first-child {
+	height: 30px;
+	width: 30px;
+}
+
+.square > div > img:nth-child(2) {
+	height: 30px !important;
+	width: auto;
+	/* width: 30px !important; */
+	margin-left: -5px;
+}
+
+.green {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	text-align: center;
+	color: rgb(47, 177, 47);
+	font-size: 17px;
+	font-weight: 500;
+	line-height: 10px;
+}
+
+.red {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	text-align: center;
+	color: rgb(177, 47, 47);
+	font-size: 17px;
+	font-weight: 500;
+	line-height: 10px;
+}
+
+.white {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	text-align: center;
+	color: white;
+	font-size: 17px;
+	font-weight: 500;
+	line-height: 10px;
+}
+
+.status-icon {
+	width: 25px !important;
+	height: 25px !important;
+}
+
+.img-div {
+	margin-right: 5px;
+	margin-left: 5px;
+	position: relative;
+	width: 102px;
+	height: 107px;
+}
+
+.img-div > * {
+	position: absolute;
+}
+.board-yellow,
+.board-red,
+.board-green,
+.board-blue {
+	transition-duration: 0.3s;
+}
+
+.board-red {
+}
+.board-yellow:hover {
+	filter: drop-shadow(0px 0px 13px rgb(245, 232, 47));
+	transition-duration: 0.3s;
+}
+.board-green:hover {
+	filter: drop-shadow(0px 0px 13px rgb(47, 245, 106));
+	transition-duration: 0.3s;
+}
+.board-blue:hover {
+	filter: drop-shadow(0px 0px 13px rgb(47, 126, 245));
+	transition-duration: 0.3s;
+}
+.board-red:hover {
+	filter: drop-shadow(0px 0px 13px rgb(245, 70, 47));
+	transition-duration: 0.3s;
+}
+.ability-bg {
+	width: 120px !important;
+	height: auto !important;
+	padding: 8px !important;
+}
+.ability-type {
+	width: 65px !important;
+	padding-left: 10px;
+	height: auto !important;
+}
+
+.ability-weapon {
+	width: 60px !important;
+	height: auto !important;
+}
+
+.ability-global {
+	width: 107px !important;
+	padding: 6px;
+	height: auto !important;
+}
+.rel {
+	position: relative;
+}
+
+.node-text {
+	bottom: -15px;
+	background: rgb(148, 148, 148);
+	background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.5) 75%, rgba(0, 0, 0, 0) 100%);
+	padding: 5px 0;
+	font-size: 14px;
+	text-align: center;
+	min-width: 50px;
+}
+
+.abilityBoard {
+	max-width: 1108px;
+	height: 1100px;
+	overflow-y: auto;
+}
+
+.royal-font {
+	font-family: "Almendra", serif;
 }
