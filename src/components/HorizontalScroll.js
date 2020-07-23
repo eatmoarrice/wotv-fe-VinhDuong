@@ -4,7 +4,7 @@ export default function HorizontalScroll(props) {
 	return (
 		<div className="row justify-content-center align-items-center justify-content-center">
 			<div className="col-lg-4 d-flex justify-content-center align-items-center">
-				<img src={`../img/portrait/${props.name}.png`} height="500px" />
+				<img src={`../img/portrait/${props.name}.png`} className="img-fluid" />
 			</div>
 			<div className="d-md-none d-flex flex-column">
 				<h1 className="pretty-name text-center">{props.name}</h1>
