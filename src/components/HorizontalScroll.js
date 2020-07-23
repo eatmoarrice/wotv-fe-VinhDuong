@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HorizontalScroll(props) {
 	return (
-		<div className="row justify-content-center align-items-center">
+		<div className="row justify-content-center align-items-center justify-content-center">
 			<div className="col-lg-4 d-flex justify-content-center align-items-center">
 				<img src={`../img/portrait/${props.name}.png`} height="500px" />
 			</div>

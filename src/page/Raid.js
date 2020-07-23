@@ -2,6 +2,7 @@ import React from "react";
 import AtkRes from "../components/AtkRes";
 import ElementRes from "../components/ElementRes";
 import StatusRes from "../components/StatusRes";
+import FramedCharIcon from "../components/FramedCharIcon";
 
 export default function Raid() {
 	const {
@@ -64,12 +65,13 @@ export default function Raid() {
 	};
 
 	return (
-		<div>
+		<div className="allchars mb-3 container">
 			<div className="mt-5 d-flex flex-column justify-content-center align-items-center img-box">
 				<img src={`../img/raid/lapscsli_01_m.png`} />
 				<h1 className="icy-name text-center">White Marshmallow</h1>
 			</div>
-			<div className="d-flex justify-content-center">
+			<div className="text-center big-text mb-3">Status Ailment: Sleep</div>
+			<div className="d-flex justify-content-center align-items-center flex-column">
 				<div className="resistance-board text-white">
 					<div className="m-2">ATK Type Res</div>
 
@@ -114,6 +116,44 @@ export default function Raid() {
 						<StatusRes type="dontaction" value={disable} />
 						<StatusRes type="berserk" value={berserk} />
 						<StatusRes type="doom" value={doom} />
+					</div>
+				</div>
+				<div className="recommended">
+					<p className="big-text text-center m-3">Recommended Units</p>
+					<div className="recommended-char d-flex justify-content-center flex-wrap">
+						<FramedCharIcon name="Xiza" rarity="UR" />
+						<FramedCharIcon name="Vinera" rarity="UR" />
+						<FramedCharIcon name="Sterne" rarity="UR" />
+						<FramedCharIcon name="Gaffgarion" rarity="MR" />
+						<FramedCharIcon name="Shadowlynx" rarity="MR" />
+					</div>
+					<div className="guide">
+						<div className="text-center big-text">TIPS</div>
+						<b>
+							<u>Strategy:</u>{" "}
+						</b>
+						Give up the first turn to move closer to the boss and block it, or buff yourself to gain AP. Ignore all the mobs (and stay far away from them). <br />
+						<b>
+							<u>Xiza & Vinera:</u>{" "}
+						</b>
+						Use Steal Time constantly. Vinera can use LB to build up chains if she is fast enough to lap the boss.
+						<br />
+						<b>
+							<u>Sterne:</u>{" "}
+						</b>
+						At level 89, he can't do 2 Hard Slash in a row. So either move in and attack the boss on turn 1, or buff himself. You can normal attack if he does not have 34 AP or more, so
+						you won't break the chain after the first Hard Slash due to not having any AP left.
+						<br />
+						<b>
+							<u>Shadowlynx:</u>
+						</b>{" "}
+						A Dream within a Dream to chain attacks. Then Hien for damage.
+						<br />
+						<b>
+							<u>Gaffagrion:</u>
+						</b>{" "}
+						Crushing Blow is a low cost, high damage skill that can chain both slash and dark. At level 99, he can do 4 Crushing Blows in a row (which may be better than Sterne in some
+						cases).
 					</div>
 				</div>
 			</div>

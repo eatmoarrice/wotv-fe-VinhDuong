@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import AbilityNode from "./AbilityNode";
 
 export default function AbilityBoard(props) {
@@ -24,10 +25,11 @@ export default function AbilityBoard(props) {
 	const renderRow = (start, end) => {
 		let row = [];
 		for (let i = start; i <= end; i++) {
-			row.push(<AbilityNode type={board[i].type} job={board[i].job} text={board[i].text} />);
+			row.push(<AbilityNode type={board[i].type} job={board[i].job} text={board[i].text} showSkillDetails={props.showSkillDetails} scrollHere={props.scrollHere} />);
 		}
 		return row;
 	};
+
 	return (
 		<div className="abilityBoard pt-3">
 			<div className="d-flex justify-content-center">{renderRow(0, 4)}</div>

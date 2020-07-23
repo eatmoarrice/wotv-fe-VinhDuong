@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function AbilityNode(props) {
 	const joblist = {
@@ -34,6 +34,7 @@ export default function AbilityNode(props) {
 		"White Mage of Lapis": "lapsfina",
 		Thief: "thi"
 	};
+
 	const type = props.type;
 	const job = joblist[props.job];
 	const text = props.text;
@@ -77,9 +78,13 @@ export default function AbilityNode(props) {
 			break;
 	}
 
+	const showAndScroll = async (text) => {
+		const response = await props.showSkillDetails(text);
+		if (response) props.scrollHere();
+	};
 	return (
 		<div className={hover}>
-			<div className="d-flex justify-content-center align-items-center">
+			<div className="d-flex justify-content-center align-items-center" onClick={() => showAndScroll(text)}>
 				<div className="rel">
 					<div className="d-flex justify-content-center align-items-center img-div">
 						<img className="ability-bg" src={nodeBG} alt="" />

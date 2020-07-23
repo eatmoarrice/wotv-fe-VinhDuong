@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 export default function Navigation() {
 	return (
-		<div>
-			<Navbar expand="md" className="dirt">
+		<div className="topnav">
+			<Navbar expand="md" className="dirt navbar-dark">
 				<Link to="/">
 					<img className="logo" src="../img/mog.png" height="70px" />
 				</Link>

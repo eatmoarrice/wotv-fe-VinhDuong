@@ -1,25 +1,62 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Home() {
+	function useWindowSize() {
+		const isClient = typeof window === "object";
+
+		function getSize() {
+			return {
+				width: isClient ? window.innerWidth : undefined,
+				height: isClient ? window.innerHeight : undefined
+			};
+		}
+
+		const [windowSize, setWindowSize] = useState(getSize);
+
+		useEffect(() => {
+			if (!isClient) {
+				return false;
+			}
+
+			function handleResize() {
+				setWindowSize(getSize());
+			}
+
+			window.addEventListener("resize", handleResize);
+			return () => window.removeEventListener("resize", handleResize);
+		}, []); // Empty array ensures that effect is only run on mount and unmount
+
+		return windowSize;
+	}
+
+	const size = useWindowSize();
+	const [url, seturl] = useState("");
+	const checkURL = () => {
+		if (size.width > 720 && url === "") {
+			seturl("https://www.youtube.com/embed/bgut5bvKGBg?controls=0&showinfo=0&rel=0&autoplay=1&mute=1&loop=1");
+		}
+		if (size.width <= 720 && url !== "") {
+			seturl("");
+		}
+	};
+	useEffect(() => {
+		checkURL();
+	}, [size.width]);
 	return (
-		<div id="home" className="text-center container justify-content-center align-item-center d-flex">
-			<div className="page-wrapper d-md-flex align-items-center justify-content-center flex-column d-none">
-				<div className="scroll-top">
-					<img src="../img/scroll-top.png" />
-				</div>
-				<div className="page">
-					<div className="welcome">Welcome to a fanmade portal for</div>
-					<div className="home-text">War of the Visions Final Fantasy Brave Exvius</div>
-					<img src="../img/char.png" height="350px" />
-					<br />
-					<img src="../img/divider.png" height="20px" />
-					<div className="home-text">Newest Character: Glaciela Wezette</div>
-				</div>
-				<div className="scroll-bot">
-					<img src="../img/scroll-bottom.png" />
+		<div>
+			<Link to="/characters">
+				<div className="iframeblock"></div>
+			</Link>
+
+			<div className="video-background d-none d-md-block">
+				<div className="video-foreground">
+					<iframe src={url} frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
-			{/* <img className="bottom-right-image" src="../img/home_bg_castle.png" /> */}
+			<Link to="/characters">
+				<div className="home d-md-none d-block"></div>
+			</Link>
 		</div>
 	);
 }

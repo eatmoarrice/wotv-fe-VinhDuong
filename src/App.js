@@ -7,21 +7,29 @@ import Navigation from "./components/Navigation";
 import Characters from "./page/Characters";
 import Character from "./page/Character";
 import Raid from "./page/Raid";
+import Tools from "./page/Tools";
+import Footer from "./components/Footer";
+import Miscellaneous from "./page/Miscellaneous";
 
 function App() {
 	return (
 		<div className="App">
 			<Router>
 				<Navigation />
-				<Switch>
-					<Route exact path="/">
-						<Home />
-					</Route>
-					<Route exact path="/login" component={Login} />
-					<Route exact path="/characters" component={Characters} />
-					<Route exact path="/characters/:name" component={Character} />
-					<Route exact path="/raid" component={Raid} />
-				</Switch>
+				<div className="wrapper">
+					<Switch>
+						<Route exact path="/">
+							<Home />
+						</Route>
+						<Route exact path="/login" component={Login} />
+						<Route exact path="/characters" component={Characters} />
+						<Route exact path="/characters/:name" component={Character} />
+						<Route exact path="/raid" component={Raid} />
+						<Route exact path="/tools" component={Tools} />
+						<Route exact path="/miscellaneous" component={Miscellaneous} />
+					</Switch>
+					<Footer />
+				</div>
 			</Router>
 		</div>
 	);
