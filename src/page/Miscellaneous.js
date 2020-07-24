@@ -5,7 +5,7 @@ export default function Miscellaneous() {
 		<div className="misc d-flex justify-content-center flex-column align-items-center container">
 			<i class="fab fa-discord fa-3x"></i>
 			<div className="big-text m-3">Discord Emotes</div>
-			<p>Edited by me and my guildmate Isanagi. Enjoy!</p>
+			<p>Edited by me and my guildmate Isagani. Enjoy!</p>
 			<a href="/download/emotes.zip" download className="btn btn-success">
 				Download Here
 			</a>
