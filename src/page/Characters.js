@@ -151,11 +151,11 @@ export default function Characters() {
 			</div>
 			{filteredList.length === charList.length ? (
 				<div>
-					<h1>UR</h1>
+					<h1 className="pretty-title">UR</h1>
 					<div className="row text-white ">{listRarity("UR")}</div>
-					<h1>MR</h1>
+					<h1 className="pretty-title">MR</h1>
 					<div className="row text-white ">{listRarity("MR")}</div>
-					<h1>SR and below</h1>
+					<h1 className="pretty-title">SR and below</h1>
 					<div className="row text-white ">
 						{listRarity("SR")}
 						{listRarity("R")}
