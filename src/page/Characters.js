@@ -124,28 +124,28 @@ export default function Characters() {
 				}}
 			/>
 			<div className="mb-4">
-				<div className={`btn btn-outline-warning ${filterElement.includes("Fire") ? "active" : ""}`} onClick={() => toggleElement("Fire")}>
+				<div className={`filter-button  ${filterElement.includes("Fire") ? "active" : ""}`} onClick={() => toggleElement("Fire")}>
 					Fire
 				</div>
-				<div className={`btn btn-outline-warning ${filterElement.includes("Ice") ? "active" : ""}`} onClick={() => toggleElement("Ice")}>
+				<div className={`filter-button  ${filterElement.includes("Ice") ? "active" : ""}`} onClick={() => toggleElement("Ice")}>
 					Ice
 				</div>
-				<div className={`btn btn-outline-warning ${filterElement.includes("Wind") ? "active" : ""}`} onClick={() => toggleElement("Wind")}>
+				<div className={`filter-button  ${filterElement.includes("Wind") ? "active" : ""}`} onClick={() => toggleElement("Wind")}>
 					Wind
 				</div>
-				<div className={`btn btn-outline-warning ${filterElement.includes("Earth") ? "active" : ""}`} onClick={() => toggleElement("Earth")}>
+				<div className={`filter-button  ${filterElement.includes("Earth") ? "active" : ""}`} onClick={() => toggleElement("Earth")}>
 					Earth
 				</div>
-				<div className={`btn btn-outline-warning ${filterElement.includes("Lightning") ? "active" : ""}`} onClick={() => toggleElement("Lightning")}>
+				<div className={`filter-button  ${filterElement.includes("Lightning") ? "active" : ""}`} onClick={() => toggleElement("Lightning")}>
 					Lightning
 				</div>
-				<div className={`btn btn-outline-warning ${filterElement.includes("Water") ? "active" : ""}`} onClick={() => toggleElement("Water")}>
+				<div className={`filter-button  ${filterElement.includes("Water") ? "active" : ""}`} onClick={() => toggleElement("Water")}>
 					Water
 				</div>
-				<div className={`btn btn-outline-warning ${filterElement.includes("Light") ? "active" : ""}`} onClick={() => toggleElement("Light")}>
+				<div className={`filter-button  ${filterElement.includes("Light") ? "active" : ""}`} onClick={() => toggleElement("Light")}>
 					Light
 				</div>
-				<div className={`btn btn-outline-warning ${filterElement.includes("Dark") ? "active" : ""}`} onClick={() => toggleElement("Dark")}>
+				<div className={`filter-button  ${filterElement.includes("Dark") ? "active" : ""}`} onClick={() => toggleElement("Dark")}>
 					Dark
 				</div>
 			</div>
