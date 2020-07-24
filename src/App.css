@@ -908,3 +908,21 @@ a {
 	min-height: 81vh;
 	background-color: #fae174;
 }
+
+.responsive-iframe {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 110%;
+	height: 100%;
+}
+
+.blocker {
+	background-color: black;
+	height: 73px;
+	width: 100%;
+	z-index: 1;
+	position: absolute;
+}

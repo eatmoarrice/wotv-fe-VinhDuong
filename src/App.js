@@ -29,8 +29,8 @@ function App() {
 						<Route exact path="/raid" component={Raid} />
 						<Route exact path="/tools" component={Tools} />
 						<Route exact path="/miscellaneous" component={Miscellaneous} />
+						<Route exact path="/tools/matplanner" component={MatPlanner} />
 						<Route component={FourOhFour} />
-						{/* <Route exact path="/tools/matplanner" component={MatPlanner} /> */}
 					</Switch>
 					<Footer />
 				</div>
