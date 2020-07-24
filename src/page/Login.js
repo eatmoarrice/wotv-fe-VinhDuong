@@ -3,11 +3,12 @@ import React, { useState } from "react";
 export default function Login() {
 	const [email, setEmail] = useState(null);
 	const [password, setPassword] = useState(null);
+	const server = process.env.REACT_APP_SERVER;
 	const submit = async (e) => {
 		e.preventDefault();
 		const body = { email, password };
 		console.log(body);
-		const url = `http://localhost:5000/api/auth`;
+		const url = `${server}/api/auth`;
 		const data = await fetch(url, {
 			method: "POST",
 			headers: {
@@ -15,7 +16,11 @@ export default function Login() {
 			},
 			body: JSON.stringify(body)
 		});
-		console.log(await data.text());
+		const res = await data.text();
+		if (data.status === 200) {
+			localStorage.setItem("token", res);
+		}
+		console.log(data);
 	};
 	return (
 		<div id="login-page">

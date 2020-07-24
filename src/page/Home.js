@@ -34,7 +34,7 @@ export default function Home() {
 	const [url, seturl] = useState("");
 	const checkURL = () => {
 		if (size.width > 720 && url === "") {
-			seturl("https://www.youtube.com/embed/bgut5bvKGBg?controls=0&showinfo=0&rel=0&autoplay=1&mute=1&loop=1");
+			seturl("https://www.youtube.com/embed/bgut5bvKGBg?controls=0&showinfo=0&rel=0&autoplay=1&mute=1&loop=1&playlist=bgut5bvKGBg");
 		}
 		if (size.width <= 720 && url !== "") {
 			seturl("");
