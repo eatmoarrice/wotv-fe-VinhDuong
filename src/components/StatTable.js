@@ -14,6 +14,14 @@ export default function StatTable(props) {
 			<p className="jump">{props.stats.JUMP}</p>
 			<p className="dex">{props.stats.DEX}</p>
 			<p className="luck">{props.stats.LUCK}</p>
+			{/* <div className="star">
+				<img src="../img/UI/cmn_icon_star.png" />
+				<img src="../img/UI/cmn_icon_star.png" />
+				<img src="../img/UI/cmn_icon_star.png" />
+				<img src="../img/UI/cmn_icon_star.png" />
+				<img src="../img/UI/cmn_icon_star.png" />
+				<img src="../img/UI/cmn_icon_star.png" />
+			</div> */}
 		</div>
 	);
 }
