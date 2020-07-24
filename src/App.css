@@ -926,3 +926,7 @@ a {
 	z-index: 1;
 	position: absolute;
 }
+
+.matplan {
+	min-height: 90vh;
+}
