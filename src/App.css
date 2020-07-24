@@ -885,9 +885,10 @@ a {
 }
 
 .filter-button {
+	margin-bottom: 10px;
 	user-select: none;
 	color: #ffc107;
-	border-radius: 5px;
+	/* border-radius: 5px; */
 	border: 1px solid #ffc107;
 	display: inline-block;
 	padding: 7px;
