@@ -1,34 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+
 import { Navbar, NavDropdown, Nav, Form, Button, FormControl } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function Navigation() {
+	const [expanded, setExpanded] = useState(false);
 	return (
 		<div className="topnav">
-			<Navbar expand="md" className="dirt navbar-dark">
-				<Link to="/">
+			<Navbar expand="md" expanded={expanded} className="dirt navbar-dark">
+				<Link to="/" onClick={() => setExpanded(false)}>
 					<img className="logo" src="../img/mog.png" height="70px" />
 				</Link>
-				<Navbar.Toggle aria-controls="basic-navbar-nav" />
+				<Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : "expanded")} />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="mr-auto">
 						<div className="home-section">
-							<Link to="/characters" className="no-underscore">
+							<Link to="/characters" className="no-underscore" onClick={() => setExpanded(false)}>
 								<span className="fancy-text">Characters</span>
 							</Link>
 						</div>
 						<div className="home-section">
-							<Link to="/raid" className="no-underscore">
+							<Link to="/raid" className="no-underscore" onClick={() => setExpanded(false)}>
 								<span className="fancy-text">Raid</span>
 							</Link>
 						</div>
 						<div className="home-section">
-							<Link to="/tools" className="no-underscore">
+							<Link to="/tools" className="no-underscore" onClick={() => setExpanded(false)}>
 								<span className="fancy-text">Tools</span>
 							</Link>
 						</div>
 						<div className="home-section">
-							<Link to="/miscellaneous" className="no-underscore">
+							<Link to="/miscellaneous" className="no-underscore" onClick={() => setExpanded(false)}>
 								<span className="fancy-text">Miscellaneous</span>
 							</Link>
 						</div>
