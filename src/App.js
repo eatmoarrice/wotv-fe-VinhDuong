@@ -10,6 +10,8 @@ import Raid from "./page/Raid";
 import Tools from "./page/Tools";
 import Footer from "./components/Footer";
 import Miscellaneous from "./page/Miscellaneous";
+import MatPlanner from "./page/MatPlanner";
+import FourOhFour from "./page/FourOhFour";
 
 function App() {
 	return (
@@ -27,6 +29,8 @@ function App() {
 						<Route exact path="/raid" component={Raid} />
 						<Route exact path="/tools" component={Tools} />
 						<Route exact path="/miscellaneous" component={Miscellaneous} />
+						<Route component={FourOhFour} />
+						{/* <Route exact path="/tools/matplanner" component={MatPlanner} /> */}
 					</Switch>
 					<Footer />
 				</div>
