@@ -12,6 +12,12 @@ export default function Miscellaneous() {
 			<div className="d-flex justify-content-center">
 				<div className="d-flex mt-3 flex-wrap mb-5">
 					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/wol.png" width="60px" /> :wol:
+					</div>
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/warrior_of_tears.png" width="60px" /> :nowol:
+					</div>
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
 						<img src="/img/emotes/agrias.png" width="60px" /> :agrias:
 					</div>
 					<div className="d-flex flex-column justify-content-center align-items-center m-3">
