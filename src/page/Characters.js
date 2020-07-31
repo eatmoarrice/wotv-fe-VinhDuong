@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Loading from "../components/Loading";
 
 export default function Characters() {
 	const server = process.env.REACT_APP_SERVER;
@@ -112,7 +113,12 @@ export default function Characters() {
 		filterEverything();
 	}, [filterWord, filterElement, filterRarity, filterMainJob, filterSubJob]);
 
-	if (!charList || !filteredList) return <div>loading</div>;
+	if (!charList || !filteredList)
+		return (
+			<div>
+				<Loading />
+			</div>
+		);
 	return (
 		<div className="container text-center text-white allchars mb-5">
 			<input

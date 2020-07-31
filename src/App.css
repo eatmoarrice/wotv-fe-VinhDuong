@@ -955,3 +955,7 @@ a {
 	left: 40px;
 	top: 20px;
 }
+
+.loading {
+	min-height: 60vh;
+}
