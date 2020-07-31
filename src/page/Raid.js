@@ -43,7 +43,7 @@ export default function Raid() {
 		fire: 10,
 		wind: 10,
 		earth: 10,
-		thunder: 10,
+		lightning: 10,
 		water: 10,
 		light: 10,
 		dark: -20,

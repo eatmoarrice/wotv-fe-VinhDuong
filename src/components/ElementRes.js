@@ -3,7 +3,7 @@ import React from "react";
 export default function ElementRes(props) {
 	let value = props.value;
 	let type = props.type;
-	if (type == "lightning") type = "thunder";
+	if (type == "thunder") type = "lightning";
 	if (type == "light") type = "shine";
 
 	return (

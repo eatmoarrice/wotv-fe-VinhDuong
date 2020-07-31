@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import StatTable from "../components/StatTable";
 import HorizontalScroll from "../components/HorizontalScroll";
 import AbilityBoard from "../components/AbilityBoard";
+import Loading from "../components/Loading";
 const scrollToRef = (ref) => window.scrollTo({ top: ref.current.offsetTop, behavior: "smooth" });
 
 export default function Character(props) {
@@ -32,7 +33,12 @@ export default function Character(props) {
 		getDetails();
 	}, []);
 
-	if (!details) return <div>Loading</div>;
+	if (!details)
+		return (
+			<div>
+				<Loading />
+			</div>
+		);
 	return (
 		<div className="container p-3 char-page text-white">
 			<HorizontalScroll desc={details.desc} name={details.name} />
