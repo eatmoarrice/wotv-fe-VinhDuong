@@ -1,17 +1,17 @@
-import React from "react";
-import "./App.css";
-import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
-import Login from "./page/Login";
-import Home from "./page/Home";
-import Navigation from "./components/Navigation";
-import Characters from "./page/Characters";
-import Character from "./page/Character";
-import Raid from "./page/Raid";
-import Tools from "./page/Tools";
-import Footer from "./components/Footer";
-import Miscellaneous from "./page/Miscellaneous";
-import MatPlanner from "./page/MatPlanner";
-import FourOhFour from "./page/FourOhFour";
+import React from 'react';
+import './App.css';
+import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
+import Login from './page/Login';
+import Home from './page/Home';
+import Navigation from './components/Navigation';
+import Characters from './page/Characters';
+import Character from './page/Character';
+import Raid from './page/Raid';
+import Tools from './page/Tools';
+import Footer from './components/Footer';
+import Miscellaneous from './page/Miscellaneous/Miscellaneous';
+import MatPlanner from './page/MatPlanner';
+import FourOhFour from './page/FourOhFour';
 
 function App() {
 	return (

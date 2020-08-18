@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import './Miscellaneous.css';
 
 export default function Miscellaneous() {
 	return (
@@ -10,7 +11,52 @@ export default function Miscellaneous() {
 				Download Here
 			</a>
 			<div className="d-flex justify-content-center">
-				<div className="d-flex mt-3 flex-wrap mb-5">
+				<div className="d-flex mt-3 flex-wrap mb-5 emotes">
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/sleepless2.png" width="60px" /> :raid:
+					</div>
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/rainbowpepe.png" width="60px" /> :peperb:
+					</div>
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/fredinlove.png" width="60px" /> :yass:
+					</div>
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/derpina.png" width="60px" /> :derpina:
+					</div>
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/hehe.png" width="60px" /> :hehe:
+					</div>
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/smileagrias.png" width="60px" /> :yahgrias:
+					</div>
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/noagrias.png" width="60px" /> :nahgrias:
+					</div>
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/murica.png" width="60px" /> :murica:
+					</div>
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/adelbro.png" width="60px" /> :adelbro:
+					</div>
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/wink.png" width="60px" /> :wink:
+					</div>
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/nobling2.png" width="60px" /> :nobling:
+					</div>
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/nobling.png" width="60px" /> :nobling2:
+					</div>
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/sneakyninja2.png" width="60px" /> :sneaky:
+					</div>
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/sneakyninja.png" width="60px" /> :sneaky:
+					</div>
+					<div className="d-flex flex-column justify-content-center align-items-center m-3">
+						<img src="/img/emotes/drunkseymore.png" width="60px" /> :drunk:
+					</div>
 					<div className="d-flex flex-column justify-content-center align-items-center m-3">
 						<img src="/img/emotes/wol.png" width="60px" /> :wol:
 					</div>
@@ -32,6 +78,7 @@ export default function Miscellaneous() {
 					<div className="d-flex flex-column justify-content-center align-items-center m-3">
 						<img src="/img/emotes/engelbro.png" width="60px" /> :engelbro:
 					</div>
+
 					<div className="d-flex flex-column justify-content-center align-items-center m-3">
 						<img src="/img/emotes/ewww.png" width="60px" /> :grrrr:
 					</div>
@@ -90,16 +137,16 @@ export default function Miscellaneous() {
 						<img src="/img/emotes/visiore.png" height="60px" /> :visiore:
 					</div>
 					<div className="d-flex flex-column justify-content-center align-items-center m-3">
-						<img src="/img/emotes/it_aw_vball_ssr.png" width="60px" /> :azureorb:
+						<img src="/img/emotes/azureorb.png" width="60px" /> :azureorb:
 					</div>
 					<div className="d-flex flex-column justify-content-center align-items-center m-3">
-						<img src="/img/emotes/it_aw_vball_ur.png" width="60px" /> :rainboworb:
+						<img src="/img/emotes/rainboworb.png" width="60px" /> :rborb:
 					</div>
 					<div className="d-flex flex-column justify-content-center align-items-center m-3">
 						<img src="/img/emotes/zazan.png" width="60px" /> :zazan:
 					</div>
 					<div className="d-flex flex-column justify-content-center align-items-center m-3">
-						<img src="/img/emotes/it_pi_com_all.png" width="60px" /> :rainbowfrag:
+						<img src="/img/emotes/rainbowfragment.png" width="60px" /> :rbfrag:
 					</div>
 				</div>
 			</div>
