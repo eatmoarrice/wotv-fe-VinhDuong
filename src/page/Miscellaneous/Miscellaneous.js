@@ -4,9 +4,14 @@ import './Miscellaneous.css';
 export default function Miscellaneous() {
 	return (
 		<div className="misc d-flex justify-content-center flex-column align-items-center container">
-			<i class="fab fa-discord fa-3x"></i>
+			<a href="https://discord.gg/Zs54TMW">
+				<i className="fab fa-discord fa-3x"></i>
+			</a>
 			<div className="big-text m-3">Discord Emotes</div>
-			<p>Edited by me and my guildmate Isagani. Enjoy!</p>
+			<p className="text-center">
+				Edited by me and my guildmate Isagani. Enjoy! <br /> PS: Our chill guild TheReturners is looking for new members. Just fight & attend every day. No win pressure! Click the Discord
+				icon!
+			</p>
 			<a href="/download/emotes.zip" download className="btn btn-success">
 				Download Here
 			</a>
