@@ -522,6 +522,11 @@ const charlist = {
 };
 
 const joblist = {
+	Calculator: {
+		Statue: 'Angel',
+		Weapon: 'Mace',
+		Orb: 'Calculator',
+	},
 	'Holy Knight': {
 		Statue: 'Angel',
 		Weapon: 'Sword',
