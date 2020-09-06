@@ -19,9 +19,9 @@
 			function gtag() {
 				dataLayer.push(arguments);
 			}
-			gtag("js", new Date());
+			gtag('js', new Date());
 
-			gtag("config", "UA-163103228-1");
+			gtag('config', 'UA-163103228-1');
 		</script>
 		<script src="jquery-latest.min.js"></script>
 	</head>
@@ -32,7 +32,7 @@
 					<li><a class="active" href="../../">Home</a></li>
 					<li><a href="instructions.html">Instructions</a></li>
 					<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/EatMoarRice"
-						><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee" /><span style="margin-left: 15px; font-size: 20px !important;"
+						><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee" /><span style="margin-left: 15px; font-size: 20px !important"
 							>Buy me a coffee</span
 						></a
 					>
@@ -42,8 +42,8 @@
 		<div class="container" id="main-container">
 			<h2>WOTV Job Material Planner</h2>
 			<input type="text" id="myInput" placeholder="Search..." title="Type in a name" />
-			<h6 style="color: darkgreen;">
-				Added new units. Farming locations are currently outdated. Please click <b><i>Export to /u/BrandonIsABadass's tool</i></b> for the current list.
+			<h6 style="color: darkgreen">
+				Added new units. Squire Orb names are not accurate yet. Farming locations are currently outdated. Please click <b><i>Export to /u/BrandonIsABadass's tool</i></b> for the current list.
 			</h6>
 			<h6 id="top">Choose up to 10 units.</h6>
 			<!-- <h1 class="titletohide">
@@ -88,12 +88,10 @@
 			<hr class="slim titletohide" width="50%" />
 			<div class="row" id="N"></div>
 			<hr class="solid" width="75%" />
-			<h6 id="customize1">
-				Choose starting and goal job levels. Leave goals blank (or 0) to set goals as starting levels +1.
-			</h6>
+			<h6 id="customize1">Choose starting and goal job levels. Leave goals blank (or 0) to set goals as starting levels +1.</h6>
 			<div id="alljobtable" class="d-flex flex-wrap justify-content-around"></div>
 			<hr class="solid" width="75%" />
-			<div id="lookhere" style="text-align: center;">
+			<div id="lookhere" style="text-align: center">
 				<a class="btn btn-info" href="javascript:void(0)" onclick="calculate()">CALCULATE</a>
 			</div>
 			<div id="mid"></div>
@@ -107,15 +105,11 @@
 					</tbody>
 				</table>
 				<br />
-				<button class="btn btn-info" onclick="goToWebsite()">
-					Export to /u/BrandonIsABadass's tool
-				</button>
+				<button class="btn btn-info" onclick="goToWebsite()">Export to /u/BrandonIsABadass's tool</button>
 				<br />
 			</div>
-			<h4 style="text-align: center;" id="bot">Best farming locations:</h4>
-			<h6 style="text-align: center;">
-				Faint Memory is excluded. Up to 20 locations that have the most are displayed.
-			</h6>
+			<h4 style="text-align: center" id="bot">Best farming locations:</h4>
+			<h6 style="text-align: center">Faint Memory is excluded. Up to 20 locations that have the most are displayed.</h6>
 			<div id="table2"></div>
 			<div id="bottom-text-disable">
 				<h4>
@@ -151,9 +145,9 @@
 		<script src="script.js"></script>
 		<script src="fitty.min.js"></script>
 		<script>
-			fitty(".job-text, .listcharname", {
+			fitty('.job-text, .listcharname', {
 				minSize: 4,
-				maxSize: 16
+				maxSize: 16,
 			});
 		</script>
 	</body>
