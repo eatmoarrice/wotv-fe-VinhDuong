@@ -1,9 +1,9 @@
 // Edit objects below to update --------------------------------------------------
 // There are 3 objects to change/update: charlist, joblist & locationlist---------
 const charlist = {
-	Irudira: {
+	Ildyra : {
 		Element: 'Water',
-		Job1: 'Calculator',
+		Job1: 'Arithmetician',
 		Job2: 'Spellblade',
 		Job3: 'Black Mage',
 		Rarity: 'Soon',
@@ -522,10 +522,10 @@ const charlist = {
 };
 
 const joblist = {
-	Calculator: {
+	Arithmetician: {
 		Statue: 'Angel',
 		Weapon: 'Mace',
-		Orb: 'Calculator',
+		Orb: 'Arithmetician',
 	},
 	'Holy Knight': {
 		Statue: 'Angel',
