@@ -12,29 +12,29 @@ import Footer from './components/Footer';
 import Miscellaneous from './page/Miscellaneous/Miscellaneous';
 import MatPlanner from './page/MatPlanner';
 import FourOhFour from './page/FourOhFour';
+import RaidEditor from './page/RaidEditor/RaidEditor';
 
 function App() {
 	return (
 		<div className="App">
-			<Router>
-				<Navigation />
-				<div className="wrapper">
-					<Switch>
-						<Route exact path="/">
-							<Home />
-						</Route>
-						<Route exact path="/login" component={Login} />
-						<Route exact path="/characters" component={Characters} />
-						<Route exact path="/characters/:name" component={Character} />
-						<Route exact path="/raid" component={Raid} />
-						<Route exact path="/tools" component={Tools} />
-						<Route exact path="/miscellaneous" component={Miscellaneous} />
-						{/* <Route exact path="/tools/matplanner" component={MatPlanner} /> */}
-						<Route component={FourOhFour} />
-					</Switch>
-					<Footer />
-				</div>
-			</Router>
+			<Navigation />
+			<div className="wrapper">
+				<Switch>
+					<Route exact path="/">
+						<Home />
+					</Route>
+					<Route exact path="/login" component={Login} />
+					<Route exact path="/characters" component={Characters} />
+					<Route exact path="/characters/:name" component={Character} />
+					<Route exact path="/raid" component={Raid} />
+					<Route exact path="/tools" component={Tools} />
+					<Route exact path="/miscellaneous" component={Miscellaneous} />
+					<Route exact path="/raid/editor" component={RaidEditor} />
+					{/* <Route exact path="/tools/matplanner" component={MatPlanner} /> */}
+					<Route component={FourOhFour} />
+				</Switch>
+				<Footer />
+			</div>
 		</div>
 	);
 }
