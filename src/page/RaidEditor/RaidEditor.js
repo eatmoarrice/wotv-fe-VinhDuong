@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import './RaidEditor.css';
-import { Container, Alert } from 'react-bootstrap';
+import React, { useState, useEffect } from "react";
+import "./RaidEditor.css";
+import { Container, Alert } from "react-bootstrap";
 
 const NoneContent = () => {
 	return (
@@ -17,42 +17,42 @@ export default function RaidEditor() {
 	const [bosses, setBosses] = useState(null);
 	const [boss, setBoss] = useState(null);
 	const [option, setOption] = useState(null);
-	const [alertMessage, setAlertMessage] = useState('');
+	const [alertMessage, setAlertMessage] = useState("");
 	const [show, setShow] = useState(false);
 
 	const submitSet = async (e) => {
 		e.preventDefault();
 		console.log(boss);
-		console.log('submit new');
+		console.log("submit new");
 		const newBoss = await fetch(`${server}/boss/create`, {
-			method: 'POST',
+			method: "POST",
 			headers: {
-				'Content-Type': 'application/json',
+				"Content-Type": "application/json"
 			},
-			body: JSON.stringify(boss),
+			body: JSON.stringify(boss)
 		});
 
 		if (newBoss.status == 200) {
 			setShow(true);
-			setAlertMessage('You have successfully created a new boss!');
+			setAlertMessage("You have successfully created a new boss!");
 		}
 	};
 
 	const saveSet = async (e) => {
 		e.preventDefault();
 		console.log(boss);
-		console.log('save');
+		console.log("save");
 		const edit = await fetch(`${server}/boss/update`, {
-			method: 'PUT',
+			method: "PUT",
 			headers: {
-				'Content-Type': 'application/json',
+				"Content-Type": "application/json"
 			},
-			body: JSON.stringify(boss),
+			body: JSON.stringify(boss)
 		});
 		console.log(edit);
 		if (edit.status == 200) {
 			setShow(true);
-			setAlertMessage('You have saved your changes!');
+			setAlertMessage("You have saved your changes!");
 		}
 	};
 
@@ -61,7 +61,7 @@ export default function RaidEditor() {
 		let response = await fetch(url);
 		let data = await response.json();
 		setBosses(data.data);
-		setOption('existing');
+		setOption("existing");
 		console.log(data);
 	};
 
@@ -71,48 +71,49 @@ export default function RaidEditor() {
 		let data = await response.json();
 		setBoss(data.data);
 		setShow(false);
-		setOption('oneboss');
+		setOption("oneboss");
 		setBoss(data.data);
 		console.log(data);
 	};
 
 	const makeNewBoss = () => {
 		setShow(false);
-		setOption('new');
+		setOption("new");
 		setBoss({
-			name: '',
-			element: '',
-			description: '',
-			key: '',
+			name: "",
+			element: "",
+			description: "",
+			key: "",
 			res: {
-				slash: '',
-				pierce: '',
-				strike: '',
-				missile: '',
-				magic: '',
-				fire: '',
-				wind: '',
-				earth: '',
-				lightning: '',
-				water: '',
-				light: '',
-				dark: '',
-				poison: '',
-				blind: '',
-				sleep: '',
-				silence: '',
-				paralyze: '',
-				confusion: '',
-				petrify: '',
-				toad: '',
-				charm: '',
-				slow: '',
-				stop: '',
-				immobilize: '',
-				disable: '',
-				berserk: '',
-				doom: '',
-			},
+				slash: "",
+				pierce: "",
+				strike: "",
+				missile: "",
+				magic: "",
+				fire: "",
+				ice: "",
+				wind: "",
+				earth: "",
+				lightning: "",
+				water: "",
+				light: "",
+				dark: "",
+				poison: "",
+				blind: "",
+				sleep: "",
+				silence: "",
+				paralyze: "",
+				confusion: "",
+				petrify: "",
+				toad: "",
+				charm: "",
+				slow: "",
+				stop: "",
+				immobilize: "",
+				disable: "",
+				berserk: "",
+				doom: ""
+			}
 		});
 	};
 	return (
@@ -124,7 +125,7 @@ export default function RaidEditor() {
 					</Alert>
 				</div>
 			) : (
-				''
+				""
 			)}
 			<Container>
 				<div className="editor-buttons">
@@ -137,26 +138,26 @@ export default function RaidEditor() {
 				</div>
 				<div className="bosses">
 					{bosses &&
-						option === 'existing' &&
+						option === "existing" &&
 						bosses.map((boss) => (
 							<button className="boss-name" onClick={() => getSingleBoss(boss.name)}>
 								{boss.name}
 							</button>
 						))}
 				</div>
-				{!option ? <NoneContent /> : ''}
-				{boss && (option == 'oneboss' || option == 'new') && (
+				{!option ? <NoneContent /> : ""}
+				{boss && (option == "oneboss" || option == "new") && (
 					<form
 						className="raid-form"
 						onSubmit={(e) => {
-							option === 'oneboss' ? saveSet(e) : submitSet(e);
+							option === "oneboss" ? saveSet(e) : submitSet(e);
 						}}
 					>
 						<div>
 							Name: <input name="name" required type="text" value={boss.name} onChange={(e) => setBoss({ ...boss, name: e.target.value })} />
 						</div>
 						<div>
-							Element:{' '}
+							Element:{" "}
 							<select name="element" required value={boss.element} onChange={(e) => setBoss({ ...boss, element: e.target.value })}>
 								<option value="null">---</option>
 								<option value="fire">fire</option>
@@ -171,7 +172,7 @@ export default function RaidEditor() {
 							</select>
 						</div>
 						<div className="description-div">
-							Description:{' '}
+							Description:{" "}
 							<textarea className="description-box" name="description" type="string" value={boss.description} onChange={(e) => setBoss({ ...boss, description: e.target.value })} />
 						</div>
 						<div>
@@ -522,7 +523,7 @@ export default function RaidEditor() {
 								/>
 							</div>
 							<div>
-								<div style={{ fontSize: '13px' }}>
+								<div style={{ fontSize: "13px" }}>
 									<img src="/img/UI/statusconditionicon_dontmove.png" width="25px" /> Immobilize:
 								</div>
 								<input
@@ -579,7 +580,7 @@ export default function RaidEditor() {
 							</div>
 						</div>
 						<button className="submit-button" type="submit">
-							{option === 'oneboss' ? 'Save Edits' : 'Add New'}
+							{option === "oneboss" ? "Save Edits" : "Add New"}
 						</button>
 					</form>
 				)}
