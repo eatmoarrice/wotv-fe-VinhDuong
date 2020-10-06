@@ -65,8 +65,8 @@ export default function RaidEditor() {
 		console.log(data);
 	};
 
-	const getSingleBoss = async (name) => {
-		let url = `${server}/boss/${name}`;
+	const getSingleBoss = async (id) => {
+		let url = `${server}/boss/${id}`;
 		let response = await fetch(url);
 		let data = await response.json();
 		setBoss(data.data);
@@ -140,7 +140,7 @@ export default function RaidEditor() {
 					{bosses &&
 						option === "existing" &&
 						bosses.map((boss) => (
-							<button className="boss-name" onClick={() => getSingleBoss(boss.name)}>
+							<button className="boss-name" onClick={() => getSingleBoss(boss._id)}>
 								{boss.name}
 							</button>
 						))}
