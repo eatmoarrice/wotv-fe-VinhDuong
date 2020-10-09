@@ -16,10 +16,7 @@ const NoneContent = () => {
 };
 export default function CharEditor() {
 	const server = process.env.REACT_APP_SERVER;
-	let history = useHistory();
-	const [chars, setAllChars] = useState(null);
-	const [charID, setCharID] = useState("");
-	const [char, setChar] = useState({
+	const initialState = {
 		name: "",
 		element: "",
 		desc: "",
@@ -57,7 +54,11 @@ export default function CharEditor() {
 			berserk: "",
 			doom: ""
 		}
-	});
+	};
+	let history = useHistory();
+	const [chars, setAllChars] = useState(null);
+	const [charID, setCharID] = useState("");
+	const [char, setChar] = useState(initialState);
 	const [option, setOption] = useState(null);
 	const [alertMessage, setAlertMessage] = useState("");
 	const [show, setShow] = useState(false);
@@ -116,7 +117,7 @@ export default function CharEditor() {
 		let response = await fetch(url);
 		let data = await response.json();
 		if (!data.data.res) {
-			setChar({ ...data.data, res: {} });
+			setChar({ ...data.data, res: initialState.res });
 		} else setChar(data.data);
 		setShow(false);
 		setOption("onechar");
@@ -126,42 +127,7 @@ export default function CharEditor() {
 	const makeNewChar = () => {
 		setShow(false);
 		setOption("new");
-		setChar({
-			name: "",
-			element: "",
-			desc: "",
-			key: "",
-			res: {
-				slash: "",
-				pierce: "",
-				strike: "",
-				missile: "",
-				magic: "",
-				fire: "",
-				ice: "",
-				wind: "",
-				earth: "",
-				lightning: "",
-				water: "",
-				light: "",
-				dark: "",
-				poison: "",
-				blind: "",
-				sleep: "",
-				silence: "",
-				paralyze: "",
-				confusion: "",
-				petrify: "",
-				toad: "",
-				charm: "",
-				slow: "",
-				stop: "",
-				immobilize: "",
-				disable: "",
-				berserk: "",
-				doom: ""
-			}
-		});
+		setChar(initialState);
 	};
 	const changeURL = (name) => {
 		history.push(`/characters/${name}/editor`);
