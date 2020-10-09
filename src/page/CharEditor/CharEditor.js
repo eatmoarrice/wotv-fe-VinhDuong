@@ -164,6 +164,10 @@ export default function CharEditor() {
 						</select>
 					</div>
 					<div>
+						<div>Avatar:</div> <img src={`/img/char/${char.name}.png`} width={100} />
+					</div>
+
+					<div>
 						Element:{" "}
 						<select name="element" required value={char.element.toLowerCase()} onChange={(e) => setChar({ ...char, element: e.target.value })}>
 							<option value="null">---</option>
@@ -176,6 +180,17 @@ export default function CharEditor() {
 							<option value="light">light</option>
 							<option value="dark">dark</option>
 							<option value="none">none</option>
+						</select>
+					</div>
+					<div>
+						Rarity:{" "}
+						<select name="rarity" required value={char.rarity} onChange={(e) => setChar({ ...char, rarity: e.target.value })}>
+							<option value="null">---</option>
+							<option value="UR">UR</option>
+							<option value="MR">MR</option>
+							<option value="SR">SR</option>
+							<option value="R">R</option>
+							<option value="N">N</option>
 						</select>
 					</div>
 					<div className="description-div">Jobs:</div>
