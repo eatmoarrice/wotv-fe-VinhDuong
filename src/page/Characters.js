@@ -23,10 +23,10 @@ export default function Characters() {
 			if (item.rarity === rarity) {
 				return (
 					<div className="col-md-2 col-sm-4 col-6" key={key}>
-						<Link to={`/characters/${item.name}`}>
+						<Link to={`/characters/${item.shortname ? item.shortname : item.name}`}>
 							<div className="justify-content-center d-flex flex-column align-items-center char-card">
-								<img className="char-icon" alt={`image of ${item.name}`} src={`img/char/${item.name}.png`} height="80px" />
-								{item.stylized ? item.stylized : item.name}
+								<img className="char-icon" alt={`image of ${item.name}`} src={`img/char/${item.shortname ? item.shortname : item.name}.png`} height="80px" />
+								{item.name}
 							</div>
 						</Link>
 					</div>

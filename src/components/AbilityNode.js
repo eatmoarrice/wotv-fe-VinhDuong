@@ -76,6 +76,10 @@ export default function AbilityNode(props) {
 			abilityWeapon = `../img/job-nodes/${job}_m.png`;
 			hover = "board-blue";
 			break;
+		default:
+			nodeBG = "../img/board/abilityboard_panel_cover_unit_status_release.png";
+			abilityType = "../img/board/abilityboard_panel_type_unit_status.png";
+			abilityWeapon = ``;
 	}
 
 	const showAndScroll = async (text) => {

@@ -9,6 +9,7 @@ export default function Character(props) {
 	const server = process.env.REACT_APP_SERVER;
 	const shortName = props.match.params.name;
 	const [details, setDetails] = useState(null);
+	const [board, setBoard] = useState(null);
 	const [skillDetails, setSkillDetails] = useState(null);
 	const [isOpen, setIsOpen] = useState(false);
 	const showSkillDetails = async (skillname) => {
@@ -22,8 +23,12 @@ export default function Character(props) {
 	const getDetails = async () => {
 		const data = await fetch(`${server}/characters/${shortName}`);
 		const response = await data.json();
+		console.log("details", response.data);
 		setDetails(response.data);
-		console.log(response.data);
+		const data2 = await fetch(`${server}/board/${response.data._id}`);
+		const response2 = await data2.json();
+		setBoard(response2.data);
+		console.log(response2.data);
 	};
 
 	const myRef = useRef(null);
@@ -33,7 +38,7 @@ export default function Character(props) {
 		getDetails();
 	}, []);
 
-	if (!details)
+	if (!details || !board)
 		return (
 			<div>
 				<Loading />
@@ -41,7 +46,7 @@ export default function Character(props) {
 		);
 	return (
 		<div className="container p-3 char-page text-white">
-			<HorizontalScroll desc={details.desc} name={details.name} />
+			<HorizontalScroll desc={details.desc} name={details.shortname ? details.shortname : details.name} />
 			{/* <div className="d-md-flex d-none justify-content-center my-5">
 				<img src="../img/divider2.png" className="img-fluid divider2" />
 			</div> */}
@@ -74,7 +79,7 @@ export default function Character(props) {
 						</div>
 					</div>
 
-					<StatTable stats={details.stats} />
+					{/* <StatTable stats={details.stats} /> */}
 				</div>
 				<div className="star-rating text-center mt-3">
 					<h5>Rating:</h5>
@@ -95,7 +100,7 @@ export default function Character(props) {
 			</div>
 
 			<h2 className="text-center icy-name royal-font border-bottom pb-4 mb-4">Ability Board</h2>
-			<AbilityBoard board={details.board} name={details.name} rarity={details.rarity} showSkillDetails={showSkillDetails} scrollHere={scrollHere} />
+			<AbilityBoard board={board.board} name={details.shortname ? details.shortname : details.name} rarity={details.rarity} showSkillDetails={showSkillDetails} scrollHere={scrollHere} />
 
 			{skillDetails ? (
 				<div className="w-100 d-flex justify-content-center mb-4" ref={myRef}>
@@ -108,7 +113,7 @@ export default function Character(props) {
 								<img src={`../img/skills/${skillDetails.name.replace(/\s/g, "").toLowerCase()}.jpg`} width="120px" />
 							</div>
 							<div>
-								<div className="white-text pl-5 pr-2">{skillDetails.desc}</div>
+								<div className="white-text pl-5 pr-2">{skillDetails.description}</div>
 								<div className="d-flex justify-content-end w-100 pr-2 mt-3">
 									{skillDetails.AP ? <div>AP: {skillDetails.AP}</div> : <div>TP: {skillDetails.TP}</div>}
 									<div className="ml-3">Uses: {skillDetails.uses}</div>

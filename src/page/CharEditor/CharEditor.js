@@ -20,6 +20,7 @@ export default function CharEditor() {
 		name: "",
 		element: "",
 		desc: "",
+		description: "",
 		key: "",
 		job1: "",
 		job2: "",
@@ -105,14 +106,14 @@ export default function CharEditor() {
 		let data = await response.json();
 		setAllChars(data.data);
 		setOption("existing");
-		console.log(data);
 	};
 
 	const getSingleChar = async () => {
 		console.log(name);
 		let id = chars.find((item) => item.name === name)._id;
-		setCharID(id);
-		let url = `${server}/characters/${id}`;
+		// setCharID(id);
+		console.log(id);
+		let url = `${server}/characters/id/${id}`;
 		console.log(name);
 		let response = await fetch(url);
 		let data = await response.json();
