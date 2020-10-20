@@ -76,7 +76,7 @@ export default function PrivacyPolicy() {
 
 			<h2>Advertising Partners Privacy Policies</h2>
 
-			<P>You may consult this list to find the Privacy Policy for each of the advertising partners of WOTV Guide.</p>
+			<p>You may consult this list to find the Privacy Policy for each of the advertising partners of WOTV Guide.</p>
 
 			<p>
 				Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on WOTV Guide,

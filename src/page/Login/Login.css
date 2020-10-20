@@ -1,0 +1,37 @@
+.login-button {
+	border: none;
+	text-transform: uppercase;
+	font-family: Helvetica, sans-serif;
+	font-weight: 700;
+	-webkit-font-smoothing: antialiased;
+	padding: 15px;
+	margin: 10px 5px;
+	font-size: 16px;
+	background-color: rgb(219, 132, 81);
+	color: white;
+	transition-duration: 0.3s;
+}
+
+.login-button:hover {
+	transition-duration: 0.3s;
+	background-color: rgb(158, 79, 34);
+}
+
+.login-button--facebook {
+	background-color: #3b5998;
+	transition-duration: 0.3s;
+}
+
+.login-button--facebook:hover {
+	transition-duration: 0.3s;
+	background-color: #7993c9;
+}
+
+.login-button--google {
+	transition-duration: 0.3s;
+	background-color: #ea4335;
+}
+.login-button--google:hover {
+	transition-duration: 0.3s;
+	background-color: #34a853;
+}
