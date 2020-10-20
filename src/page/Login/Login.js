@@ -12,7 +12,7 @@ export default function Login() {
 	const history = useHistory();
 	const submitLogin = async (e) => {
 		e.preventDefault();
-		let url = `${process.env.REACT_APP_SERVER}/register`;
+		let url = `${process.env.REACT_APP_SERVER}/login`;
 		let body = { username: e.target.username.value, email: e.target.email.value, password: e.target.password.value };
 		let res = await fetch(url, {
 			method: "POST",
@@ -52,7 +52,7 @@ export default function Login() {
 	};
 
 	const responseGoogle = (response) => {
-		console.log(response);
+		console.log("google: ", response);
 		loginWithGoogle(response.accessToken);
 	};
 	return (
@@ -70,31 +70,7 @@ export default function Login() {
 				<button className="login-button" type="submit">
 					Login
 				</button>
-				<div className="login-buttons">
-					<FacebookLogin
-						appId={process.env.REACT_APP_FB_ID}
-						autoLoad={false}
-						fields="name,email,picture"
-						callback={responseFacebook}
-						render={(renderProps) => (
-							<button className="login-button login-button--facebook" onClick={renderProps.onClick}>
-								FACEBOOK
-							</button>
-						)}
-					/>
-					<GoogleLogin
-						clientId={process.env.REACT_APP_GOOGLE_ID}
-						buttonText="Login"
-						onSuccess={responseGoogle}
-						onFailure={responseGoogle}
-						cookiePolicy={"single_host_origin"}
-						render={(renderProps) => (
-							<button className="login-button login-button--google" onClick={renderProps.onClick} disabled={renderProps.disabled}>
-								GOOGLE
-							</button>
-						)}
-					/>
-				</div>
+
 				<div>
 					Don't have an account? Go{" "}
 					<Link to="/register">
@@ -103,6 +79,31 @@ export default function Login() {
 					.
 				</div>
 			</form>
+			<div className="login-buttons">
+				<FacebookLogin
+					appId={process.env.REACT_APP_FB_ID}
+					autoLoad={false}
+					fields="name,email,picture"
+					callback={responseFacebook}
+					render={(renderProps) => (
+						<button className="login-button login-button--facebook" onClick={renderProps.onClick}>
+							FACEBOOK
+						</button>
+					)}
+				/>
+				<GoogleLogin
+					clientId={process.env.REACT_APP_GOOGLE_ID}
+					buttonText="Login"
+					onSuccess={responseGoogle}
+					onFailure={responseGoogle}
+					cookiePolicy={"single_host_origin"}
+					render={(renderProps) => (
+						<button className="login-button login-button--google" onClick={renderProps.onClick} disabled={renderProps.disabled}>
+							GOOGLE
+						</button>
+					)}
+				/>
+			</div>
 		</div>
 	);
 }
