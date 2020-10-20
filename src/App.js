@@ -14,6 +14,8 @@ import MatPlanner from "./page/MatPlanner";
 import FourOhFour from "./page/FourOhFour";
 import RaidEditor from "./page/RaidEditor/RaidEditor";
 import CharEditor from "./page/CharEditor/CharEditor";
+import SignUp from "./page/SignUp/SignUp";
+import PrivacyPolicy from "./page/PrivacyPolicy/PrivacyPolicy";
 
 function App() {
 	return (
@@ -25,6 +27,7 @@ function App() {
 						<Home />
 					</Route>
 					<Route exact path="/login" component={Login} />
+					<Route exact path="/register" component={SignUp} />
 					<Route exact path="/characters" component={Characters} />
 					<Route exact path="/characters/:name" component={Character} />
 					<Route exact path="/raid" component={Raid} />
@@ -32,6 +35,7 @@ function App() {
 					<Route exact path="/miscellaneous" component={Miscellaneous} />
 					<Route exact path="/raid/editor" component={RaidEditor} />
 					<Route exact path="/characters/:name/editor" component={CharEditor} />
+					<Route exact path="/privacy" component={PrivacyPolicy} />
 					{/* <Route exact path="/tools/matplanner" component={MatPlanner} /> */}
 					<Route component={FourOhFour} />
 				</Switch>

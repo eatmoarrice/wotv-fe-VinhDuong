@@ -40,19 +40,19 @@ export default function RaidEditor() {
 
 	const saveSet = async (e) => {
 		e.preventDefault();
-		console.log(boss);
-		console.log("save");
-		const edit = await fetch(`${server}/boss/update`, {
-			method: "PUT",
+		const edit = await fetch(`${server}/boss/${boss._id}`, {
+			method: "PATCH",
 			headers: {
 				"Content-Type": "application/json"
 			},
 			body: JSON.stringify(boss)
 		});
-		console.log(edit);
 		if (edit.status == 200) {
 			setShow(true);
 			setAlertMessage("You have saved your changes!");
+		} else {
+			setShow(true);
+			setAlertMessage("Something happened!");
 		}
 	};
 
@@ -191,7 +191,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.slash}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, slash: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, slash: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -205,7 +210,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.missile}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, missile: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, missile: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -219,7 +229,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.strike}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, strike: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, strike: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -233,7 +248,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.pierce}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, pierce: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, pierce: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -247,7 +267,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.magic}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, magic: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, magic: e.target.value }
+										})
+									}
 								/>
 							</div>
 						</div>
@@ -264,7 +289,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.fire}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, fire: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, fire: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -278,7 +308,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.ice}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, ice: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, ice: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -292,7 +327,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.wind}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, wind: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, wind: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -306,7 +346,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.earth}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, earth: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, earth: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -320,7 +365,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.lightning}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, lightning: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, lightning: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -334,7 +384,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.water}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, water: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, water: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -348,7 +403,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.light}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, light: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, light: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -362,7 +422,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.dark}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, dark: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, dark: e.target.value }
+										})
+									}
 								/>
 							</div>
 						</div>
@@ -379,7 +444,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.poison}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, poison: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, poison: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -393,7 +463,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.blind}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, blind: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, blind: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -407,7 +482,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.sleep}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, sleep: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, sleep: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -421,7 +501,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.silence}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, silence: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, silence: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -435,7 +520,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.paralyze}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, paralyze: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, paralyze: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -449,7 +539,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.confusion}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, confusion: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, confusion: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -463,7 +558,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.petrify}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, petrify: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, petrify: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -477,7 +577,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.toad}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, toad: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, toad: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -491,7 +596,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.charm}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, charm: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, charm: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -505,7 +615,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.slow}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, slow: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, slow: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -519,7 +634,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.stop}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, stop: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, stop: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -533,7 +653,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.immobilize}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, immobilize: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, immobilize: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -547,7 +672,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.disable}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, disable: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, disable: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -561,7 +691,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.berserk}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, berserk: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, berserk: e.target.value }
+										})
+									}
 								/>
 							</div>
 							<div>
@@ -575,7 +710,12 @@ export default function RaidEditor() {
 									min={-999}
 									max={999}
 									value={boss.res.doom}
-									onChange={(e) => setBoss({ ...boss, res: { ...boss.res, doom: e.target.value } })}
+									onChange={(e) =>
+										setBoss({
+											...boss,
+											res: { ...boss.res, doom: e.target.value }
+										})
+									}
 								/>
 							</div>
 						</div>
